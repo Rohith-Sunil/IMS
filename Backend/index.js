@@ -9,6 +9,7 @@ const projectRoutes = require("./Routes/projectRoutes");
 const productRoutes = require("./Routes/productRoutes");
 const searchRoute = require("./Routes/search");
 const purchaseRoute = require("./Routes/purchaseRoutes");
+const userRoutes = require("./Routes/userRoutes");
 
 connectToMongo(); // Connect to MongoDB
 
@@ -21,6 +22,7 @@ app.use("/api/projects", projectRoutes); // Project routes
 app.use("/api/products", productRoutes); // Product routes
 app.use("/api/search", searchRoute);
 app.use("/api/purchase", purchaseRoute);
+app.use("/api/user", userRoutes); // User routes
 
 // Start the server
 app.listen(port, () => {

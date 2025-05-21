@@ -60,6 +60,8 @@ import Product from "./components/mincomponents/Product";
 import Purchases from "./components/Purchases";
 import UpdateProject from "./components/UpdateProject";
 import LandingPage from "./components/LandingPage";
+import LoginPage from "./components/LoginPage";
+import SignupPage from "./components/SignupPage";
 
 function App() {
   return (
@@ -67,6 +69,8 @@ function App() {
       <Routes>
         {/* ✅ Standalone Landing Page (no Navbar, no layout) */}
         <Route path="/landing" element={<LandingPage />} />
+        <Route path="/login" element={<LoginPage />} />
+        <Route path="/signup" element={<SignupPage />} />
 
         {/* ✅ All other routes use layout with Navbar */}
         <Route
@@ -76,7 +80,6 @@ function App() {
               <Navbar title="IMS" about="About" />
               <div className="container mx-auto px-4 py-5">
                 <Routes>
-                  <Route path="/" element={<Home />} />
                   <Route path="/purchases" element={<Purchases />} />
                   <Route path="/products" element={<Products />} />
                   <Route path="/product/:id" element={<Product />} />
@@ -93,6 +96,11 @@ function App() {
                   <Route path="/projects" element={<Projects />} />
                   <Route path="/insertproject" element={<InsertProject />} />
                   <Route path="/search" element={<Search />} />
+
+                  {/*public routes*/}
+                  <Route path="/" element={<Home />} />
+
+                  {/* <Route path="/about" element={<About />} /> */}
                 </Routes>
               </div>
             </div>
