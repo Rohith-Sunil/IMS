@@ -126,7 +126,7 @@ export default function InsertProduct() {
         setStockLeft("");
         setProjectId("");
         navigate("/products");
-        await axios.post("http://127.0.0.1:8000/rebuild_index");
+        await axios.post("http://127.0.0.1:8009/rebuild_index");
       } else if (res.status === 422) {
         alert("Product is already added with that barcode.");
       } else {
@@ -152,7 +152,7 @@ export default function InsertProduct() {
     if (updatedStockLeft < 0) {
       setError("Not enough stock.");
       finalStockRequired = stockLeft;
-      setStockLeft(0);
+      //setStockLeft(0);
 
       // Log the purchase request
       try {
@@ -230,11 +230,12 @@ export default function InsertProduct() {
           body: JSON.stringify(updatedProduct),
         }
       );
+      console.log("Response status:", response.status);
 
       if (response.status === 200) {
-        await axios.post("http://127.0.0.1:8000/rebuild_index");
+        await axios.post("http://127.0.0.1:8009/rebuild_index");
         alert("Data Updated");
-        navigate("/products");
+        navigate(`/projects/${projectId}`);
       } else {
         setError("Something went wrong. Please try again.");
       }
