@@ -68,7 +68,7 @@ function App() {
     <Router>
       <Routes>
         {/* ✅ Standalone Landing Page (no Navbar, no layout) */}
-        <Route path="/landing" element={<LandingPage />} />
+        <Route path="/" element={<LandingPage />} />
         <Route path="/login" element={<LoginPage />} />
         <Route path="/signup" element={<SignupPage />} />
 
@@ -98,7 +98,7 @@ function App() {
                   <Route path="/search" element={<Search />} />
 
                   {/*public routes*/}
-                  <Route path="/" element={<Home />} />
+                  <Route path="/home" element={<Home />} />
 
                   {/* <Route path="/about" element={<About />} /> */}
                 </Routes>

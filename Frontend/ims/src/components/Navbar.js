@@ -1,11 +1,11 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import logo from "../assets/logo.png";
+import logo from "../assets/logo.png"; // Adjust the path as necessary
 import profilePic from "../assets/profile.png";
 
 export default function Navbar({ title }) {
   return (
-    <nav className="bg-teal-800 shadow-md">
+    <nav className="bg-teal-600 shadow-md">
       <div className="max-w-7xl mx-auto px-6 py-3 flex items-center justify-between">
         {/* Left: Logo & Title */}
         <div className="flex items-center space-x-3">

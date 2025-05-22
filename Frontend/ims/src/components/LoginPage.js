@@ -30,7 +30,7 @@ export default function LoginPage() {
       }
 
       localStorage.setItem("user", JSON.stringify(data.user));
-      navigate("/");
+      navigate("/home");
     } catch (err) {
       setError("Something went wrong, try again");
     }
