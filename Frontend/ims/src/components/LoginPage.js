@@ -1,11 +1,13 @@
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
+import { useAuth } from "../context/AuthContext";
 
 export default function LoginPage() {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [error, setError] = useState("");
   const navigate = useNavigate();
+  const { login } = useAuth(); // ✅ Get AuthContext's login() function
 
   const handleSubmit = async (e) => {
     e.preventDefault();
@@ -28,9 +30,8 @@ export default function LoginPage() {
         setError(data.message || "Login failed");
         return;
       }
-
-      localStorage.setItem("user", JSON.stringify(data.user));
-      navigate("/home");
+      login(data.user); // ✅ Call AuthContext's login() function
+      navigate("/home"); // ✅ Redirect after login
     } catch (err) {
       setError("Something went wrong, try again");
     }

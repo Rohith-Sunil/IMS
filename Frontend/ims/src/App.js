@@ -62,52 +62,65 @@ import UpdateProject from "./components/UpdateProject";
 import LandingPage from "./components/LandingPage";
 import LoginPage from "./components/LoginPage";
 import SignupPage from "./components/SignupPage";
+import ProtectedRoute from "./components/mincomponents/ProtectedRoute";
+import { Toaster } from "react-hot-toast";
 
 function App() {
   return (
-    <Router>
-      <Routes>
-        {/* ✅ Standalone Landing Page (no Navbar, no layout) */}
-        <Route path="/" element={<LandingPage />} />
-        <Route path="/login" element={<LoginPage />} />
-        <Route path="/signup" element={<SignupPage />} />
+    <>
+      <Toaster position="top-right" reverseOrder={false} />
+      <Router>
+        <Routes>
+          {/* ✅ Standalone Landing Page (no Navbar, no layout) */}
+          <Route path="/" element={<LandingPage />} />
+          <Route path="/login" element={<LoginPage />} />
+          <Route path="/signup" element={<SignupPage />} />
 
-        {/* ✅ All other routes use layout with Navbar */}
-        <Route
-          path="*"
-          element={
-            <div className="App">
-              <Navbar title="IMS" about="About" />
-              <div className="container mx-auto px-4 py-5">
-                <Routes>
-                  <Route path="/purchases" element={<Purchases />} />
-                  <Route path="/products" element={<Products />} />
-                  <Route path="/product/:id" element={<Product />} />
-                  <Route path="/insertproduct" element={<InsertProduct />} />
-                  <Route
-                    path="/updateproduct/:id"
-                    element={<UpdateProduct />}
-                  />
-                  <Route path="/projects/:id" element={<UniProject />} />
-                  <Route
-                    path="/projects/:id/update"
-                    element={<UpdateProject />}
-                  />
-                  <Route path="/projects" element={<Projects />} />
-                  <Route path="/insertproject" element={<InsertProject />} />
-                  <Route path="/search" element={<Search />} />
+          {/* ✅ All other routes use layout with Navbar */}
+          <Route
+            path="*"
+            element={
+              <ProtectedRoute>
+                <div className="App">
+                  <Navbar title="IMS" about="About" />
+                  <div className="container mx-auto px-4 py-5">
+                    <Routes>
+                      <Route path="/purchases" element={<Purchases />} />
+                      <Route path="/products" element={<Products />} />
+                      <Route path="/product/:id" element={<Product />} />
+                      <Route
+                        path="/insertproduct"
+                        element={<InsertProduct />}
+                      />
+                      <Route
+                        path="/updateproduct/:id"
+                        element={<UpdateProduct />}
+                      />
+                      <Route path="/projects/:id" element={<UniProject />} />
+                      <Route
+                        path="/projects/:id/update"
+                        element={<UpdateProject />}
+                      />
+                      <Route path="/projects" element={<Projects />} />
+                      <Route
+                        path="/insertproject"
+                        element={<InsertProject />}
+                      />
+                      <Route path="/search" element={<Search />} />
 
-                  {/*public routes*/}
-                  <Route path="/home" element={<Home />} />
+                      {/*public routes*/}
+                      <Route path="/home" element={<Home />} />
 
-                  {/* <Route path="/about" element={<About />} /> */}
-                </Routes>
-              </div>
-            </div>
-          }
-        />
-      </Routes>
-    </Router>
+                      {/* <Route path="/about" element={<About />} /> */}
+                    </Routes>
+                  </div>
+                </div>
+              </ProtectedRoute>
+            }
+          />
+        </Routes>
+      </Router>
+    </>
   );
 }
 
