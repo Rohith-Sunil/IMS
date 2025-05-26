@@ -32,7 +32,7 @@ export default function Projects() {
         <h2 className="text-3xl font-bold text-gray-800">Projects</h2>
         <button
           onClick={() => setShowInsertModal(true)}
-          className="bg-teal-700 text-white px-5 py-2 rounded-lg shadow hover:bg-teal-600 transition"
+          className="bg-teal-600 text-white px-5 py-2 rounded-lg shadow hover:bg-teal-700 transition"
         >
           + Add New Project
         </button>

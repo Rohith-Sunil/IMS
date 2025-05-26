@@ -409,7 +409,7 @@ export default function InsertProduct() {
       <div className="flex justify-center mb-4">
         <button
           type="submit"
-          className="bg-blue-600 text-white font-medium px-6 py-2 rounded hover:bg-blue-700 transition"
+          className="bg-teal-600 text-white font-medium px-6 py-2 rounded hover:bg-teal-700 transition"
           onClick={productUpdate ? updateProduct : addProduct}
           disabled={loading}
         >

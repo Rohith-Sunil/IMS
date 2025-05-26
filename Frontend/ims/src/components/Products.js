@@ -109,7 +109,7 @@ export default function Products() {
         <h1 className="text-3xl font-semibold">Components Inventory</h1>
         <NavLink
           to="/insertproduct"
-          className="bg-teal-700 text-white px-4 py-2 rounded text-lg hover:bg-teal-600"
+          className="bg-teal-600 text-white px-4 py-2 rounded text-lg hover:bg-teal-700"
         >
           + Add New Component
         </NavLink>
