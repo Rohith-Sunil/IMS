@@ -1,0 +1,5 @@
+uvicorn faiss_api:app --host 127.0.0.1 --port 8000 --reload
+uvicorn faiss_api_new:app --host 127.0.0.1 --port 8009 --reload
+cd ml-api
+pip install fastapi uvicorn faiss-cpu sentence-transformers
+
