@@ -43,7 +43,7 @@ export default function Search() {
   };
 
   return (
-    <div className="max-w-3xl mx-auto mt-10 px-4">
+    <div className="max-w-3xl mx-auto px-4 -mt-2">
       <h2 className="text-2xl font-semibold mb-4">Search Components</h2>
 
       {/* <form onSubmit={handleSearch} className="mb-6">
@@ -79,7 +79,7 @@ export default function Search() {
         </div>
       </form>
       <div className="overflow-scroll-y">
-        <ul className="space-y-4 ">
+        <ul className="space-y-2 ">
           {products.length === 0 ? (
             <li className="bg-gray-100 px-4 py-3 rounded border text-gray-700">
               No products found.

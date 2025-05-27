@@ -83,7 +83,7 @@ function App() {
               <ProtectedRoute>
                 <div className="App">
                   <Navbar title="IMS" about="About" />
-                  <div className="container mx-auto px-4 py-5">
+                  <div className="container mx-auto px-4 py-5 h-screen">
                     <Routes>
                       <Route path="/purchases" element={<Purchases />} />
                       <Route path="/products" element={<Products />} />
@@ -114,6 +114,12 @@ function App() {
                       {/* <Route path="/about" element={<About />} /> */}
                     </Routes>
                   </div>
+                  <footer className="relative z-10 bg-gray-900 text-gray-300 py-10 px-4 text-center">
+                    <p className="text-sm">
+                      &copy; {new Date().getFullYear()} IMS Pro. All rights
+                      reserved.
+                    </p>
+                  </footer>
                 </div>
               </ProtectedRoute>
             }
