@@ -116,7 +116,7 @@ export default function Navbar({ title }) {
       <div className="max-w-7xl mx-auto px-6 py-3 flex items-center justify-between">
         {/* Left: Logo & Title */}
         <div className="flex items-center space-x-3">
-          <Link to="/" className="flex items-center space-x-2">
+          <Link to="/home" className="flex items-center space-x-2">
             <img src={logo} alt="Logo" className="w-8 h-8" />
             <span className="text-white text-2xl font-bold select-none">
               {title}
