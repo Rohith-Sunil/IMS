@@ -27,8 +27,8 @@ A modern Inventory Management System (IMS) to help teams manage and track produc
 
 ```bash
 /ims
-  ├── client/             # React frontend
-  ├── server/             # Express backend
+  ├── frontend/ims/             # React frontend
+  ├── backend/             # Express backend
   ├── ml-api/             # Python FastAPI for semantic search
   ├── README.md
 ```
