@@ -26,10 +26,10 @@ A modern Inventory Management System (IMS) to help teams manage and track produc
 ## 📁 Project Structure
 
 ```bash
-/ims
-  ├── frontend/ims/             # React frontend
-  ├── backend/             # Express backend
-  ├── ml-api/             # Python FastAPI for semantic search
+/Invento
+  ├── Frontend/ims/           # React frontend
+  ├── Backend/                # Express backend
+  ├── ml-api/updated/         # FastAPI for semantic search (FAISS)
   ├── README.md
 ```
 
@@ -40,22 +40,22 @@ A modern Inventory Management System (IMS) to help teams manage and track produc
 ### 1. Clone the Repository
 
 ```bash
-git clone https://github.com/yourusername/ims.git
-cd ims
+git clone https://github.com/Rohith-Sunil/IMS.git
+cd IMS
 ```
 
 ### 2. Setup the Backend
 
 ```bash
-cd server
+cd Backend
 npm install
-npm run dev
+nodemon index.js
 ```
 
 ### 3. Setup the Frontend
 
 ```bash
-cd ../client
+cd ../Frontend/ims
 npm install
 npm start
 ```
@@ -63,39 +63,39 @@ npm start
 ### 4. Start the ML API (FAISS)
 
 ```bash
-cd ../ml-api
-pip install -r requirements.txt
-uvicorn faiss_api_new:app --host 127.0.0.1 --port portNumber --reload
+cd ../../ml-api/updated
+pip install -r requirements.txt  # or install manually
+uvicorn faiss_api_new:app --host 127.0.0.1 --port 8009 --reload
 ```
 
 ---
 
 ## 🔧 Environment Variables
 
-Example for backend `.env`:
+Create a `.env` file in the `Backend/` folder:
 
 ```env
-MONGO_URI=mongodb://localhost:27017/ims
-PORT=5000
+MONGO_URL=mongodb://localhost:27017/ims
+PORT=3001
 ```
 
 ---
 
 ## 🧩 Future Features
 
-- 🔐 Add user authentication (e.g., JWT-based login/signup)  
-- 📊 Inventory analytics and dashboards  
-- 📥 CSV import/export for bulk operations  
-- 🚨 Low-stock notifications  
+- 🔐 JWT-based authentication and user roles  
+- 📊 Dashboard with inventory analytics  
+- 📥 CSV import/export for bulk inventory management  
+- 🚨 Real-time low-stock notifications  
 
 ---
 
 ## 🤝 Contributing
 
-Feel free to fork the repo and submit pull requests. Ideas and suggestions are always welcome!
+Contributions are welcome! Feel free to fork the repo and open pull requests. Suggestions and improvements are appreciated.
 
 ---
 
 ## 📄 License
 
-MIT
+This project is licensed under the MIT License.
