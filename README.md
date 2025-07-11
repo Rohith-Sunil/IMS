@@ -72,30 +72,19 @@ uvicorn faiss_api_new:app --host 127.0.0.1 --port 8009 --reload
 
 ## 🔧 Environment Variables
 
-Create a `.env` file in the `Backend/` folder:
+### Backend (.env for Backend/)
 
 ```env
 MONGO_URL=mongodb://localhost:27017/ims
 PORT=3001
 ```
 
----
+### ML API (.env for ml-api/updated)
 
-## 🧩 Future Features
+```env
+MONGO_URI=mongodb://localhost:27017/ims
+DATABASE_NAME=test
+COLLECTION_NAME=products
+```
 
-- 🔐 JWT-based authentication and user roles  
-- 📊 Dashboard with inventory analytics  
-- 📥 CSV import/export for bulk inventory management  
-- 🚨 Real-time low-stock notifications  
 
----
-
-## 🤝 Contributing
-
-Contributions are welcome! Feel free to fork the repo and open pull requests. Suggestions and improvements are appreciated.
-
----
-
-## 📄 License
-
-This project is licensed under the MIT License.
